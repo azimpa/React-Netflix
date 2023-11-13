@@ -1,20 +1,64 @@
-.row{
-    margin-left: 20px;
-    color: white; 
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  color: #b7b5b5;
+  max-width: 1200px;
+  padding: 20px;
 }
 
-.posters{
-    display: flex;
-    padding: 20px;
-    overflow-x: scroll;
-    overflow-y: hidden;
+.posters {
+  display: flex;
+  padding: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 20px;
 }
 
-.posters::-webkit-scrollbar{
-    display: none;
+.posters::-webkit-scrollbar {
+  width: 10px;
 }
 
-.poster{
-    max-height: 250px;
-    margin-right: 10px;
-} 
+.posters::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+}
+
+.poster,
+.smallPoster {
+  max-height: 250px;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.poster:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.smallPoster {
+  max-height: 160px;
+}
+
+.smallPoster:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .row {
+    padding: 10px;
+  }
+
+  .posters {
+    padding: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .poster,
+  .smallPoster {
+    max-height: 150px;
+    margin-right: 5px;
+  }
+}
